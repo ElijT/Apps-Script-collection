@@ -1,5 +1,5 @@
 function SearchFilesByDate() {
-  var Allfiles = DriveApp.getFolderById('0B_cJ6eLt_6A0VVgweDdXZFpvdzg').getFiles();
+  var Allfiles = DriveApp.getFolderById('folder ID').getFiles();
   var time = new Date();
   
   var NbFiles = Allfiles.length;
@@ -58,7 +58,7 @@ function SearchDaterange() {
 }
 
 function size() {
-  var folder =DriveApp.getFolderById('0B_cJ6eLt_6A0VVgweDdXZFpvdzg');
+  var folder =DriveApp.getFolderById('folder ID');
   Logger.log(folder.getName());
   Logger.log(folder.getSize());
   
