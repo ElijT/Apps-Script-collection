@@ -8,3 +8,27 @@ This function **"SearchDaterange()"** basically list all files within google dri
 The logic of the function is just to build a search query that is well formated to give you a workable output.
 The function has been made to be called from a spreadsheet and will output all the data in the current active spreadsheet... So call it only on blank spreadsheet.
 I had use it to review old files for archiving/cleaning of a team drive and I had other function that would read the last columns and perform action based on it.
+
+
+## Gmail_No-response.gs
+*This script has ben written by Jonathan Kim ( http://jonathan-kim.com/2013/Gmail-No-Response/) but the link is no longer active and I did not find easily the code, so I am allowing myself to store it here. Please keep the original author track here.*
+The idea behind the script is to flag with a given label message that are waiting for an answer. The is a second label that can be applied to message where you do not expect any answer and also a time limit after which the label will be removed (to unclutter the label "waiting". I find it quite handy when I build my set of tools to perform automatic treatment of my inbox.
+
+## Invitation_not_answered.gs
+This script a bit like the previous one is looking for invitation that I received that I did not reply to... (I know it is really bad). The status "INVITED" correspond to that exact situation. The script does not output any data, it should be incorporated in a larger function to put it in a page/speadsheet...
+
+## Save_Email_eml.gs
+Very handy function to export emails from gmail as a eml files!!
+The function should have a list of threads as input and will save all files in Drive preserving all data (sender, recipients, subject and attached files). Note that the process is not very quick and you can rapidly reach maximum execution time, so make sure to select threads with not too many emails and modify the output if you need to save in specific folders or so.
+
+## Transfer_email.gs
+Basic function to forward all emails with a given label to another email. The function remove the label after forwarding.
+
+## Search mail.gs
+Personnal experience here when performing search on emails and having a lot of results.... It stopped and had issues with execution time and calling the email service...
+So the script test if there is more than 50 results and if so build an array with all emails by calling fifty emails at a time.
+The same logic can be used for action on that array in some case.
+
+
+
+
