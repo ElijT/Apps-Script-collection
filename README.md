@@ -29,6 +29,8 @@ Personnal experience here when performing search on emails and having a lot of r
 So the script test if there is more than 50 results and if so build an array with all emails by calling fifty emails at a time.
 The same logic can be used for action on that array in some case.
 
+## Ping_website.gs
+This function will ping every 15 minutes during day and 30 minutes during night a given website. The script does nothing with the ping information but is nice to play around with triggers!
 
 
 
