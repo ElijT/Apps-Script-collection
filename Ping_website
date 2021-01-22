@@ -1,0 +1,32 @@
+//This function will ping every 15 minutes during day and 30 minutes during night a given website. The script does nothing with the ping information but is nice to play around with triggers!
+
+
+function Ping() {
+  var url = "http://xxx";
+  var response = UrlFetchApp.fetch(url);
+  Logger.log(response.getResponseCode());
+  
+}
+
+function DayTrig() {
+  deleteTriggers();
+  ScriptApp.newTrigger("Ping").timeBased().everyMinutes(15).create();
+  ScriptApp.newTrigger("NightTrig").timeBased().atHour(21).everyDays(1).create();
+  Logger.log(ScriptApp.getProjectTriggers());
+}
+
+function deleteTriggers() {
+  // Loop over all triggers.
+  var allTriggers = ScriptApp.getProjectTriggers();
+  
+  for (var i = 0; i < allTriggers.length; i++) {
+    // If the current trigger is the correct one, delete it.
+    ScriptApp.deleteTrigger(allTriggers[i]);
+  }
+}
+
+function NightTrig() {
+  deleteTriggers();
+  ScriptApp.newTrigger("DayTrig").timeBased().atHour(7).nearMinute(30).everyDays(1).create();
+  Logger.log(ScriptApp.getProjectTriggers());
+}
