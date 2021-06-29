@@ -1,0 +1,63 @@
+//#################################################################################################
+//#                             Slide generation
+//#                    Create Google slide deck based on a template and 
+//#                             data from a spreadsheet (mail merge)
+//#          
+//#    Developer : ElijT
+//#    
+//# Scope : Program
+//#################################################################################################
+//#
+//#    Instruction: Fill in the ID value for 1)templade slide, 2)final presentation and 3)spreadsheet
+//#The program will parse the google sheet and take first line as header, second line as keys and the remaining rows as data
+//#For each line of data, the program will add the slide from the template, replace values matching the text matching the keys and move on to the next rows
+//#
+//#To-Do (quite a lot)
+//# - Create new document instead of requiring ID from the final document
+//# - Wrap the program in an spreadsheet add-on (ease of use and reuse directly the ID from current spreadsheet) / Add a file picker to select template slide
+//# - Implement different value type for the columns (now all text) but could be image//link//? 
+//#################################################################################################
+
+const SLIDES_TEMPLATE_ID = 'template slide ID';
+const SLIDES_FINAL_ID = 'ID of the final document';
+const SHEET_ID = 'google sheet data base';
+
+//#################################DO NOT MODIFY BELOW (or at your own risks)################################################################
+
+function generateSlides() {
+  var values = getData(SHEET_ID);
+  var presentation = SlidesApp.openById(SLIDES_FINAL_ID);
+  var presentationtemp = SlidesApp.openById(SLIDES_TEMPLATE_ID);
+  var slide = presentationtemp.getSlides()[0];
+  
+  var keys = values[1];
+  
+  for (var i=2; i < values.length; i++) {
+    presentation.appendSlide(slide);
+    ReplaceValues(keys, values[i]);    
+  }                                        
+}
+
+function getData(id) {
+  var sheet = SpreadsheetApp.openById(id).getActiveSheet();
+  var Values = sheet.getDataRange().getValues();
+  return Values;  
+}
+
+function addtempSlide() {
+  var presentationtemp = SlidesApp.openById(SLIDES_TEMPLATE_ID);
+  var presentation1 = SlidesApp.openById(SLIDES_FINAL_ID);
+  var slide = presentationtemp.getSlides()[0];
+  presentation1.appendSlide(slide);
+}
+
+function ReplaceValues(Keys, Value) {
+  var presentation = SlidesApp.openById(SLIDES_FINAL_ID);
+  //Logger.log(Value[0]);
+  for (var k=0; k < Keys.length; k++) {
+    presentation.replaceAllText(Keys[k], Value[k], true);  
+  }
+}
+
+
+
