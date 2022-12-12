@@ -11,7 +11,7 @@ I had use it to review old files for archiving/cleaning of a team drive and I ha
 
 
 ## Gmail_No-response.gs
-*This script has ben written by Jonathan Kim ( http://jonathan-kim.com/2013/Gmail-No-Response/) but the link is no longer active and I did not find easily the code, so I am allowing myself to store it here. Please keep the original author track here.*
+*This script has been written by Jonathan Kim ( http://jonathan-kim.com/2013/Gmail-No-Response/) but the link is no longer active and I did not find easily the code, so I am allowing myself to store it here. If you re-use the code please do credit him.*
 The idea behind the script is to flag with a given label message that are waiting for an answer. The is a second label that can be applied to message where you do not expect any answer and also a time limit after which the label will be removed (to unclutter the label "waiting". I find it quite handy when I build my set of tools to perform automatic treatment of my inbox.
 
 ## Invitation_not_answered.gs
@@ -32,5 +32,12 @@ The same logic can be used for action on that array in some case.
 ## Ping_website.gs
 This function will ping every 15 minutes during day and 30 minutes during night a given website. The script does nothing with the ping information but is nice to play around with triggers!
 
+## Ping_website.gs
+This function will ping every 15 minutes during day and 30 minutes during night a given website. The script does nothing with the ping information but is nice to play around with triggers!
 
+## Collection from *Learning Google Apps script* website
+*This script colection is published here( http://sites.google.com/view/googlappsscript/) and I am allowing myself to store them and expand based on those results. If you re-use those code please reference the original website as well.*
+### Description of the scripts:
+- Multiple Page Webapp: A basis to create a multi page website from Google Apps script. The visual is pretty minimalist but it allows to expand from here.
+- Converting Images to DataURIs: A great workflow to use base64 encoded url to serve images.
 
